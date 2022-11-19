@@ -1,9 +1,7 @@
 import express from 'express';
 const router = express.Router();
+const store = require('../Controllers/Order/store')
 
-router.post("/")
-router.get("/")
-router.put("/")
-router.delete("/")
+router.post("/api/order", store)
 
 module.exports = router

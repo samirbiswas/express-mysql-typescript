@@ -1,13 +1,10 @@
-import mysql from 'mysql'
+import { connect } from 'mongoose';
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'boutique_db',
-    multipleStatements: true
-});
 
-connection.connect();
+const connection = connect('mongodb://127.0.0.1:27017/sayburgh_solutions_db')
+    .then(() => {
+        console.log("Database connected successfully");
+    })
+    .catch((err) => console.log(err));
 
-export default connection
+    module.exports = connection
